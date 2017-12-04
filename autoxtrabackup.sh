@@ -138,12 +138,12 @@ fi
 if grep -q "completed OK" $backupLog; then
         #echo "Backup completed OK"
         if [[ $sendEmail == always ]]; then
-                cat $backupLog | mail -s "AutoXtraBackup log" $emailAddress
+                cat $backupLog | mutt -s "AutoXtraBackup log" $emailAddress
         fi
 else
         #echo "Backup FAILED"
         if [[ $sendEmail == always ]] || [[ $sendEmail == onerror ]]; then
-                cat $backupLog | mail -s "AutoXtraBackup log" $emailAddress
+                cat $backupLog | mutt -s "AutoXtraBackup log" $emailAddress
         fi
         exit 1
 fi
