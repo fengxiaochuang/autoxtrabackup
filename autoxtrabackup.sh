@@ -7,15 +7,15 @@
 if [ -f /etc/default/autoxtrabackup ] ; then
         . /etc/default/autoxtrabackup
 else
-
-backupDir=/var/backups/mysql
-hoursBeforeFull=48
-mysqlUser=dbuser
-mysqlPwd=password
-compression=true
-keepDays=7
-sendEmail=never
-emailAddress=
+        backupDir=/var/backups/mysql
+        hoursBeforeFull=48
+        mysqlUser=dbuser
+        mysqlPwd=password
+        compression=true
+        compressThreads=1
+        keepDays=7
+        sendEmail=never
+        emailAddress=
 fi
 
 #####
